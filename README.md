@@ -64,10 +64,11 @@ export default function App() {
     });
     setCopy('Copiar');
     setButtonClass('buttonDefault');
-    return newPassword;
+    setPassword(newPassword)
+    
   }
 
-  function copyToTransferArea(password) {
+  function copyToTransferArea() {
     CopyCplipboard(password);
     setCopy("Copiado");
     setButtonClass('copped');
@@ -77,11 +78,11 @@ export default function App() {
     <>
       <Title>Gerador de senhas</Title>
       <div className="card">
-        <button onClick={() => setPassword(generateNewPassword())}>
+        <button onClick={generateNewPassword}>
           Gerar
         </button>
 
-        <button className={buttonClass} onClick={() => copyToTransferArea(password)}>
+        <button className={buttonClass} onClick={copyToTransferArea}>
           {copy}
         </button>
       </div>
@@ -89,6 +90,7 @@ export default function App() {
     </>
   );
 }
+
 
 
 
